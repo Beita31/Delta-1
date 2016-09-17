@@ -1,0 +1,14 @@
+com\una\proyecto\webapp\filter\MockFilterChain.class
+com\una\proyecto\webapp\controller\SignupControllerTest.class
+com\una\proyecto\webapp\controller\UserControllerTest.class
+com\una\proyecto\webapp\dao\CampoJuegoDaoTest.class
+com\una\proyecto\webapp\controller\UpdatePasswordControllerTest.class
+com\una\proyecto\webapp\controller\BaseControllerTestCase.class
+com\una\proyecto\webapp\dao\JugadorDaoTest.class
+com\una\proyecto\webapp\controller\UserFormControllerTest.class
+com\una\proyecto\webapp\controller\PasswordHintControllerTest.class
+com\una\proyecto\webapp\dao\EquipoDaoTest.class
+com\una\proyecto\webapp\dao\ContactoDaoTest.class
+com\una\proyecto\webapp\dao\PartidoDaoTest.class
+com\una\proyecto\webapp\filter\LocaleFilterTest.class
+com\una\proyecto\webapp\listener\StartupListenerTest.class

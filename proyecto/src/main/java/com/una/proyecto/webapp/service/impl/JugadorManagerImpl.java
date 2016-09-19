@@ -25,7 +25,7 @@ public class JugadorManagerImpl extends GenericManagerImpl<Jugador, Long> implem
 	@Override
 	public boolean perteneceAEquipo(Jugador jugador, Equipo equipo) {
 		for (Jugador jugadorActual : equipo.getJugadores()) {
-			if(jugador.equals(jugadorActual))
+			if(jugador.getId()==jugadorActual.getId())
 				return true;
 		}
 		return false;

@@ -14,11 +14,10 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 //Es el equivalente a locacion
-@XmlRootElement
 @Entity
 @Table(name = "campo_juego")
-public class CampoJuego {
-	private int id;
+public class CampoJuego extends BaseObject {
+	private Long id;
 	private float precio;
 	private String direccion;
 	private String cuenta_deposito;
@@ -31,13 +30,13 @@ public class CampoJuego {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "campoJuego_id", unique = true, nullable = false)
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -109,7 +108,7 @@ public class CampoJuego {
 				+ ((cuenta_deposito == null) ? 0 : cuenta_deposito.hashCode());
 		result = prime * result
 				+ ((direccion == null) ? 0 : direccion.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result
 				+ ((partidos == null) ? 0 : partidos.hashCode());
@@ -141,8 +140,10 @@ public class CampoJuego {
 				return false;
 		} else if (!direccion.equals(other.direccion))
 			return false;
-		if (id != other.id)
-			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 		if (nombre == null) {
 			if (other.nombre != null)
 				return false;

@@ -11,12 +11,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@XmlRootElement
 @Entity
 @Table(name = "jugador")
-public class Jugador {
+public class Jugador extends BaseObject{
 	
-	private String id;
+	private Long id;
 	private String nombre;
 	private String telefono;
 	private String email;
@@ -30,11 +29,11 @@ public class Jugador {
 
 	@Id
 	@Column(name = "jugador_id", unique = true, nullable = false)
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -159,6 +158,9 @@ public class Jugador {
 				+ telefono + ", email=" + email + ", cuenta=" + cuenta
 				+ ", equipo=" + equipo + ", contacto=" + contacto + "]";
 	}
+
+	
+}
 
 	
 }

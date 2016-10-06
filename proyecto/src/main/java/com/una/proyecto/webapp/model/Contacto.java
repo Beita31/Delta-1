@@ -12,28 +12,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@XmlRootElement
 @Entity
 @Table(name = "contacto")
-public class Contacto {
-	private int id_contacto;
+public class Contacto extends BaseObject {
+	private Long id_contacto;
 	private CampoJuego campoJuego;
 	private String nombre;
 	private String telefono;
 	private String email;
 
-	public Contacto() {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "product_id", unique = true, nullable = false)
-	public int getId_contacto() {
+	@Column(name = "contacto_id", unique = true, nullable = false)
+	public Long getId_contacto() {
 		return id_contacto;
 	}
 
-	public void setId_contacto(int id_contacto) {
+	public void setId_contacto(Long id_contacto) {
 		this.id_contacto = id_contacto;
 	}
 
@@ -82,7 +77,7 @@ public class Contacto {
 		result = prime * result
 				+ ((campoJuego == null) ? 0 : campoJuego.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + id_contacto;
+		result = prime * result + ((id_contacto == null) ? 0 : id_contacto.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result
 				+ ((telefono == null) ? 0 : telefono.hashCode());
@@ -108,7 +103,10 @@ public class Contacto {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (id_contacto != other.id_contacto)
+		if (id_contacto == null) {
+			if (other.id_contacto != null)
+				return false;
+		} else if (!id_contacto.equals(other.id_contacto))
 			return false;
 		if (nombre == null) {
 			if (other.nombre != null)

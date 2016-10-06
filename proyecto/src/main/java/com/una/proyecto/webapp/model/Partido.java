@@ -17,13 +17,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@XmlRootElement
 @Entity
 @Table(name = "partido")
-public class Partido {
-	private int numero_partido;
+public class Partido extends BaseObject {
+	private Long numero_partido;
 	private CampoJuego campoJuego;
-	private Date fecha_hora;
+	private String fecha_hora;
 	private Set<Equipo> equipos;
 	private float por_pagar;
 	
@@ -34,11 +33,11 @@ public class Partido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "partido_id", unique = true, nullable = false)
-	public int getNumero_partido() {
+	public Long getNumero_partido() {
 		return numero_partido;
 	}
 
-	public void setNumero_partido(int numero_partido) {
+	public void setNumero_partido(Long numero_partido) {
 		this.numero_partido = numero_partido;
 	}
 
@@ -54,11 +53,11 @@ public class Partido {
 	}
 
 	@Column(name = "fecha_hora")
-	public Date getFecha_hora() {
+	public String getFecha_hora() {
 		return fecha_hora;
 	}
 
-	public void setFecha_hora(Date fecha_hora) {
+	public void setFecha_hora(String fecha_hora) {
 		this.fecha_hora = fecha_hora;
 	}
 
@@ -91,7 +90,7 @@ public class Partido {
 		result = prime * result + ((equipos == null) ? 0 : equipos.hashCode());
 		result = prime * result
 				+ ((fecha_hora == null) ? 0 : fecha_hora.hashCode());
-		result = prime * result + numero_partido;
+		result = prime * result + ((numero_partido == null) ? 0 : numero_partido.hashCode());
 		result = prime * result + Float.floatToIntBits(por_pagar);
 		return result;
 	}
@@ -120,8 +119,10 @@ public class Partido {
 				return false;
 		} else if (!fecha_hora.equals(other.fecha_hora))
 			return false;
-		if (numero_partido != other.numero_partido)
-			return false;
+		if (numero_partido == null) {
+			if (other.numero_partido != null)
+				return false;
+		} else if (!numero_partido.equals(other.numero_partido))
 		if (Float.floatToIntBits(por_pagar) != Float
 				.floatToIntBits(other.por_pagar))
 			return false;
@@ -134,5 +135,4 @@ public class Partido {
 				+ campoJuego + ", fecha_hora=" + fecha_hora + ", equipos="
 				+ equipos + ", por_pagar=" + por_pagar + "]";
 	}
-
 }

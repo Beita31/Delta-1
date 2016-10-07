@@ -1,6 +1,5 @@
 package com.una.proyecto.webapp.dao.hibernate;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.appfuse.dao.hibernate.GenericDaoHibernate;
@@ -19,8 +18,8 @@ public class PartidoDaoHibernate extends GenericDaoHibernate<Partido, Long> impl
 		// TODO Auto-generated constructor stub
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Partido> findByDate(Date fecha_hora) {
+	@Override
+	public List<Partido> findByDate(String fecha_hora) {
 		return getSession().createCriteria(Partido.class).add(Restrictions.eq("fecha_hora", fecha_hora)).list();
 	}
 

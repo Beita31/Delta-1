@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.appfuse.model.BaseObject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

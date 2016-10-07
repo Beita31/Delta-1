@@ -18,14 +18,14 @@ public class JugadorDaoTest extends BaseDaoTestCase {
 
     @Test
     public void testFindJugadorByName() throws Exception {
-        List<Jugador> jugadores = jugadorDao.findByName("Esteban Hernandez");
+        List<Jugador> jugadores = jugadorDao.findByName("ESTEBAN");
         assertTrue(jugadores.size() > 0);
     }
 
     @Test(expected=DataAccessException.class)
     public void testAddAndRemoveJugador() throws Exception {
         Jugador jugador = new Jugador();
-        jugador.setNombre("Esteban Hernandez");
+        jugador.setNombre("ESTEBAN");
         jugador.setEmail("emhernandezb@gmail.com");
         jugador.setTelefono("87013173");
         jugador.setCuenta("200-04-345-903-2");
@@ -33,7 +33,7 @@ public class JugadorDaoTest extends BaseDaoTestCase {
         jugador = jugadorDao.save(jugador);
         flush();
         jugador = jugadorDao.get(new Long (jugador.getId()));
-        assertEquals("Esteban Hernandez", jugador.getNombre());
+        assertEquals("ESTEBAN", jugador.getNombre());
         assertNotNull(jugador.getNombre());
         log.debug("removing jugador...");
         jugadorDao.remove(new Long (jugador.getId()));

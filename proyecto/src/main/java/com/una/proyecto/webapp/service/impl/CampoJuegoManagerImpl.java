@@ -19,6 +19,9 @@ public class CampoJuegoManagerImpl extends GenericManagerImpl<CampoJuego, Long> 
 
 	CampoJuegoDao campoJuegoDao;
 	
+	public CampoJuegoManagerImpl() {
+	}
+	
 	@Autowired
 	public CampoJuegoManagerImpl(CampoJuegoDao campoJuegoDao) {
 		super(campoJuegoDao);

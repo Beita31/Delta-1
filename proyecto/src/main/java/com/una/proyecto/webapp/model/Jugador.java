@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import org.appfuse.model.BaseObject;
 
 @Entity
 @Table(name = "jugador")

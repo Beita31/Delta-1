@@ -119,4 +119,75 @@
             <value description="role_id">-2</value>
         </row>
     </table>
+    
+    <table name='campo_juego'>
+        <column>campoJuego_id</column>
+        <column>precio</column>
+        <column>direccion</column>
+		<column>cuenta_deposito</column>
+		<column>nombre</column>
+        <row>
+            <value>1</value>
+            <value>15000</value>
+            <value>San Pablo, Heredia</value>
+			<value>333-34-567-34-2</value>
+			<value>Premier #5</value>
+        </row>    
+    </table>
+	
+	<table name='equipo'>
+        <column>equipo_id</column>
+        <column>nombre</column>
+        <row>
+            <value>1</value>
+            <value>Lagartos</value>
+        </row>    
+    </table>
+	
+	<table name='jugador'>
+        <column>jugador_id</column>
+        <column>es_contacto</column>
+        <column>cuenta</column>
+        <column>email</column>
+        <column>nombre</column>
+		<column>telefono</column>
+		<column>equipo_id</column>
+        <row>
+            <value>115360687</value>
+            <value>false</value>
+            <value>1-113-34-53-67-7</value>
+            <value>emhernandezb@gmail.com</value>
+            <value>ESTEBAN</value>
+			<value>87013173</value>
+			<value>1</value>
+        </row>    
+    </table>
+	
+	<table name='contacto'>
+        <column>contacto_id</column>
+        <column>campoJuego_id</column>
+        <column>nombre</column>
+		<column>telefono</column>
+		<column>email</column>
+        <row>
+            <value>115360687</value>
+            <value>1</value>
+            <value>Esteban</value>
+			<value>87013173</value>
+			<value>emhernandezb@gmail</value>
+        </row>    
+    </table>
+	
+	<table name='partido'>
+        <column>partido_id</column>
+        <column>campoJuego_id</column>
+        <column>fecha_hora</column>
+		<column>por_pagar</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+            <value>1996-12-16</value>
+			<value>2500</value>
+        </row>    
+    </table>
 </dataset>

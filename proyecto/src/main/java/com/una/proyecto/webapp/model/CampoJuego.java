@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.appfuse.model.BaseObject;
+
 //Es el equivalente a locacion
 @Entity
 @Table(name = "campo_juego")

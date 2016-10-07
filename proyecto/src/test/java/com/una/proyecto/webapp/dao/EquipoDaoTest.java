@@ -18,19 +18,18 @@ public class EquipoDaoTest extends BaseDaoTestCase {
 
     @Test
     public void testFindEquipoByName() throws Exception {
-        List<Equipo> equipos = equipoDao.findByName("Tuercas FC");
+        List<Equipo> equipos = equipoDao.findByName("Lagartos");
         assertTrue(equipos.size() > 0);
     }
 
     @Test(expected=DataAccessException.class)
     public void testAddAndRemoveEquipo() throws Exception {
         Equipo equipo = new Equipo();
-        equipo.setNombre("Tuercas");
-        equipo.setId(1);
+        equipo.setNombre("Lagartos");
         equipo = equipoDao.save(equipo);
         flush();
         equipo = equipoDao.get(new Long (equipo.getId()));
-        assertEquals("Tuercas FC", equipo.getNombre());
+        assertEquals("Lagartos", equipo.getNombre());
         assertNotNull(equipo.getNombre());
         log.debug("removing equipo...");
         equipoDao.remove(new Long (equipo.getId()));

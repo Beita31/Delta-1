@@ -27,7 +27,6 @@ public class ContactoDaoTest extends BaseDaoTestCase {
         Contacto contacto = new Contacto();
         contacto.setNombre("Esteban");
         contacto.setEmail("emhernandezb@gmail.com");
-        contacto.setId_contacto(1);
         contacto.setTelefono("87013173");
         contacto = contactoDao.save(contacto);
         flush();

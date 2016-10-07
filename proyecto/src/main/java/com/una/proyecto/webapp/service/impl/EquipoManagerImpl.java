@@ -21,6 +21,9 @@ public class EquipoManagerImpl extends GenericManagerImpl<Equipo, Long> implemen
 
 	EquipoDao equipoDao;
 	
+	public EquipoManagerImpl() {
+	}
+	
 	@Autowired
 	public EquipoManagerImpl(EquipoDao equipoDao) {
 		super(equipoDao);

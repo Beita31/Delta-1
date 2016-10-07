@@ -18,34 +18,27 @@ import com.una.proyecto.webapp.model.Partido;
 public class PartidoDaoTest extends BaseDaoTestCase {
     @Autowired
     private PartidoDao partidoDao;
-
+    
     @Test
     public void testFindPartidoByDate() throws Exception {
-    	SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-    	String dateInString = "31-08-2016 10:20:56";
-    	Date date = (Date)sdf.parse(dateInString);
-        List<Partido> partidos = partidoDao.findByDate(date);
+        List<Partido> partidos = partidoDao.findByDate("1996-12-16");
         assertTrue(partidos.size() > 0);
     }
 
     @Test(expected=DataAccessException.class)
     public void testAddAndRemovePartido() throws Exception {
         Partido partido = new Partido();
-        partido.setNumero_partido(15);
         partido.setPor_pagar(new Float("14000"));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-    	String dateInString = "31-08-2016 10:20:56";
-    	Date date = (Date)sdf.parse(dateInString);
-        partido.setFecha_hora(date);
+        partido.setFecha_hora("1996-12-16");
         partido = partidoDao.save(partido);
         flush();
-        partido = partidoDao.get(new Long (partido.getNumero_partido()));
-        assertEquals(date, partido.getFecha_hora());
-        assertNotNull(partido.getFecha_hora());
+        partido = partidoDao.get(partido.getNumero_partido());
+        assertEquals("1996-12-16", partido.getFecha_hora());
+        assertNotNull(partido.getNumero_partido());
         log.debug("removing partido...");
-        partidoDao.remove(new Long (partido.getNumero_partido()));
+        partidoDao.remove(partido.getNumero_partido());
         flush();
         // should throw DataAccessException
-        partidoDao.get(new Long (partido.getNumero_partido()));
+        partidoDao.get(partido.getNumero_partido());
     }
 }

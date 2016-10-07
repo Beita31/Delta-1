@@ -26,13 +26,12 @@ public class JugadorManagerImplTest extends BaseManagerMockTestCase {
 	@Test
 	public void testPerteneceAEquipo() {
 		// given
-		final Long id = 1L;
+		final Long id = new Long (115360687);
 		final Jugador jugador = new Jugador();
-		jugador.setId("115360688");
 		final Equipo equipo = new Equipo();
 		Set<Jugador> jugadores = new HashSet<Jugador>();
 		final Jugador jugador2 = new Jugador();
-		jugador2.setId("115360688");
+		jugador2.setId(new Long(115360688));
 		jugadores.add(jugador2);
 		equipo.setJugadores(jugadores);
 

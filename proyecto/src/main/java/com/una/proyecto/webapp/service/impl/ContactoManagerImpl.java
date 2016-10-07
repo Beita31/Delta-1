@@ -18,6 +18,9 @@ public class ContactoManagerImpl extends GenericManagerImpl<Contacto, Long> impl
 
 	ContactoDao contactoDao;
 	
+	public ContactoManagerImpl() {
+	}
+	
 	@Autowired
 	public ContactoManagerImpl(ContactoDao contactoDao) {
 		super(contactoDao);

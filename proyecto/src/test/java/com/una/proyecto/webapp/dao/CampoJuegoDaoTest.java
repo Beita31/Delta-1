@@ -27,7 +27,6 @@ public class CampoJuegoDaoTest extends BaseDaoTestCase {
         CampoJuego campoJuego = new CampoJuego();
         campoJuego.setNombre("Premier #5");
         campoJuego.setDireccion("San Pablo, Heredia. 100 m norte del cementerio.");
-        campoJuego.setId(5);
         campoJuego.setPrecio(new Float("7500"));
         campoJuego.setCuenta_deposito("234-05-555-113-7");
         campoJuego = campoJuegoDao.save(campoJuego);

@@ -162,5 +162,3 @@ public class Jugador extends BaseObject{
 	
 }
 
-	
-}

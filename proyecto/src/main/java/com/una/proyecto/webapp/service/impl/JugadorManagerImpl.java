@@ -16,6 +16,9 @@ public class JugadorManagerImpl extends GenericManagerImpl<Jugador, Long> implem
 	
 	JugadorDao jugadorDao;
 	
+	public JugadorManagerImpl() {
+	}
+	
 	@Autowired
 	public JugadorManagerImpl(JugadorDao jugadorDao) {
 		super(jugadorDao);

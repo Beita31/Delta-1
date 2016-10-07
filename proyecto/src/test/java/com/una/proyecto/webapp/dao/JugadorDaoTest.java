@@ -27,7 +27,6 @@ public class JugadorDaoTest extends BaseDaoTestCase {
         Jugador jugador = new Jugador();
         jugador.setNombre("Esteban Hernandez");
         jugador.setEmail("emhernandezb@gmail.com");
-        jugador.setId("115360687");
         jugador.setTelefono("87013173");
         jugador.setCuenta("200-04-345-903-2");
         jugador.setContacto(true);

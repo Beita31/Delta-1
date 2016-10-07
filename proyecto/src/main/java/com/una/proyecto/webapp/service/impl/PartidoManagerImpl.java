@@ -20,6 +20,9 @@ public class PartidoManagerImpl extends GenericManagerImpl<Partido, Long> implem
 
 	PartidoDao partidoDao;
 	
+	public PartidoManagerImpl() {
+	}
+	
 	@Autowired
 	public PartidoManagerImpl(PartidoDao partidoDao) {
 		super(partidoDao);
@@ -27,7 +30,7 @@ public class PartidoManagerImpl extends GenericManagerImpl<Partido, Long> implem
 	}
 	
 	@Override
-	public void agregarEquipos(Date fechaPartido, Set<Equipo> equipos) {
+	public void agregarEquipos(String fechaPartido, Set<Equipo> equipos) {
 		List<Partido> partidos = partidoDao.findByDate(fechaPartido);
 		if(!partidos.isEmpty())
 			for (Equipo equipo : equipos) {
